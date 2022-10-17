@@ -1,8 +1,12 @@
 <ul>
     <% myPrehCreatures.forEach((prehCreature, idx) =>{%>
     <a href="/prehistoric_creatures/<%= idx %>">
+        <li> <%= prehCreature.type %></li>
+        <a href="/prehistoric_creatures/edit/<%= idx %>">Edit</a>
+        <form method="POST" action="/prehistoric_creatures/<%=idx%>/?_method=DELETE"><input type="submit" value="Delete prehCreature"></form>
+        </a>
 
-    <li> <%= prehCreature.type %></li>
+    
 
     </a>
     <% }) %>

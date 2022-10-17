@@ -1,0 +1,8 @@
+<form method="POST" action="/prehistoric_creatures/<%=dinoId%>/?_method=PUT">
+    <label for =type">Type</label>
+    <input type="text" name="type" value="<%= myPrehCreatures.type %>">
+    
+    <label for ="name">Name</label>
+    <input type="text" name="img_url" value="<%= myPrehCreatures.img_url %>">
+   <input type="submit" value="Update prehCreature">
+</form>
