@@ -11,6 +11,14 @@ app.use('/dinosaurs', require ('./controllers/dinosaurs'))
 app.get('/', (req, res)=>{
     res.redirect('/dinosaurs')
 })
+// Prehistoric Creatures
+app.use(express.urlencoded('./controllers/prehistoric_creatures'))
+app.use('/prehistoric_creatures', require ('./controllers/prehistoric_creatures'))
+
+app.get('/', (req, res)=>{
+    res.redirect('/prehistoric_creatures')
+})
+
 
 app.listen(3500, ()=>{
     console.log('App listening on port 3500!')

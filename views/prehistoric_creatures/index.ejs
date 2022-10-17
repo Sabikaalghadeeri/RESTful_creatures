@@ -1,0 +1,9 @@
+<ul>
+    <% myPrehCreatures.forEach((prehCreature, idx) =>{%>
+    <a href="/prehistoric_creatures<%= idx %>">
+
+    <li><%= prehCreature.name %> is a <%= prehCreature.type %></li>
+
+    </a>
+    <% }) %>
+</ul>
