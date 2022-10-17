@@ -5,6 +5,8 @@ const app = express()
 
 app.set('view engine','ejs')
 app.use(ejsLayouts)
+const bodyParser = require("body-parser");
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.urlencoded('./controllers/dinosaurs'))
 app.use('/dinosaurs', require ('./controllers/dinosaurs'))
 

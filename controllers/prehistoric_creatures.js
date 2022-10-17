@@ -4,7 +4,7 @@ const fs = require('fs')
 
 
 router.get('/', (req, res)=>{
-    let prehistoric_creatures = fs.readFileSync ("./prehistoric_creatures.json")
+    let prehistoric_creatures = fs.readFileSync ('./prehistoric_creatures.json')
     let prehData = JSON.parse(prehistoric_creatures);
     console.log(prehData)
     res.render('prehistoric_creatures', {myPrehCreatures: prehData})
@@ -19,7 +19,7 @@ router.get('/', (req, res)=>{
     let prehistoric_creatures =fs.readFileSync('./prehistoric_creatures.json')
     let prehData = JSON.parse(prehistoric_creatures);
     let prehIndex = parseInt(req.params.idx)
-    res.render('prehistoric_creature/show', {myPrehCreatures:prehData[prehIndex]})
+    res.render('prehistoric_creatures/shows', {myPrehCreatures:prehData[prehIndex]})
  })
 
  router.post('/', (req, res)=>{

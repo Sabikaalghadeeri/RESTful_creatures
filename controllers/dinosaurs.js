@@ -27,5 +27,9 @@ router.get('/', (req, res)=>{
     res.redirect('/dinosaurs')
  })
 
+ let dinosaurs= fs.readFileSync('./dinosaurs.json')
+ let dinoData = JSON.parse(dinosaurs)
+ 
+
 
 module.exports = router;
