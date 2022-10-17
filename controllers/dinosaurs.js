@@ -24,12 +24,12 @@ router.get('/', (req, res)=>{
 
  router.post('/', (req, res)=>{
     console.log('This is the Request Body: ', req.body)
-    res.redirect('/dinosaurs')
- })
 
  let dinosaurs= fs.readFileSync('./dinosaurs.json')
  let dinoData = JSON.parse(dinosaurs)
- 
-
-
+      dinoData.push(req.body)
+      fs.writeFileSync("./dinosaurs.json", JSON.stringify(dinoData))
+      //JSON stringify makes it back into json data
+   res.redirect('/dinosaurs')
+})
 module.exports = router;
